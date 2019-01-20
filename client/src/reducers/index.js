@@ -8,7 +8,7 @@ import {
 
 const initialState = {
   itemsList: [],
-  itemsDesciption: [],
+  itemsDescription: [],
   retrievingLists: false,
   retrievedLists: false,
   retrievingDesc: false,
@@ -38,7 +38,7 @@ export const rootReducer = (state = initialState, action) => {
         ...state,
         retrievedDesc: true,
         retrievingDesc: false,
-        itemsDesciption: action.payload,
+        itemsDescription: action.payload,
       };
     }
 

@@ -26,3 +26,15 @@ export const ItemBox = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+// Details
+export const DetailBox = styled.div`
+  background-color: blue;
+  min-width: 200;
+  margin: 5px;
+  height: 200px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

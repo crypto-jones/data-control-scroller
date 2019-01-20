@@ -25,8 +25,8 @@ export const getDescription = () => {
   return dispatch => {
     dispatch({ type: RETRIEVING_ITEMS_DESCRIPTION });
     promise
-      .then(res =>
-        dispatch({ type: RETRIEVED_ITEMS_DESCRIPTION, payload: res.payload })
+      .then(({ data }) =>
+        dispatch({ type: RETRIEVED_ITEMS_DESCRIPTION, payload: data.payload })
       )
       .catch(err => dispatch({ type: ERROR, payload: err }));
   };
