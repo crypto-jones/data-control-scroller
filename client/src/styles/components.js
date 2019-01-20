@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// Items
+// **** ITEMS ****
 export const ItemsBoxContainer = styled.div`
   margin: 0 auto;
   max-width: 800px;
@@ -9,7 +9,7 @@ export const ItemsBoxContainer = styled.div`
 
 export const ItemsBoxWrapper = styled.div`
   min-width: 100%;
-  min-height: 200px;
+  min-height: 150px;
   background-color: gray;
   overflow-x: auto;
   display: flex;
@@ -18,21 +18,27 @@ export const ItemsBoxWrapper = styled.div`
 
 export const ItemBox = styled.div`
   background-color: green;
-  min-width: 100px;
+  min-width: 75px;
   margin: 5px;
-  height: 100px;
-  margin: 5px;
+  height: 75px;
+  margin: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-// Details
+// **** DETAILS ****
+export const DetailsBoxContainer = styled.div`
+  margin: 0 auto;
+  max-width: 800px;
+  height: 500px;
+  overflow-y: auto;
+`;
+
 export const DetailBox = styled.div`
-  background-color: blue;
-  min-width: 200;
+  background-color: gray;
   margin: 5px;
-  height: 200px;
+  min-height: 100px;
   margin: 5px;
   display: flex;
   justify-content: center;

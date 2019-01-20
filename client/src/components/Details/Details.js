@@ -12,7 +12,14 @@ class Details extends Component {
     return (
       <Fragment>
         {details.map(detail => {
-          return <DetailBox>{detail.key}</DetailBox>;
+          return (
+            <DetailBox>
+              {detail.key} {detail.timelabel} {detail.startTime}{' '}
+              {detail.endTime} {detail.destination} {detail.runInstanceLabel}{' '}
+              {detail.status} {detail.dataStats.dataSize}{' '}
+              {detail.dataStats.numRows}
+            </DetailBox>
+          );
         })}
       </Fragment>
     );
