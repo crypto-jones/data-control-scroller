@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getList } from '../../actions';
+import { ItemBox } from '../../styles/components';
 
 class Items extends Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ class Items extends Component {
     return (
       <Fragment>
         {items.map(item => {
-          return <ul key={item}>{item}</ul>;
+          return <ItemBox key={item}>{item}</ItemBox>;
         })}
       </Fragment>
     );
