@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { scroller } from 'react-scroll';
 import { getList } from '../../actions';
 import { ItemBox } from '../../styles/components';
 
@@ -9,16 +10,23 @@ class Items extends Component {
     tabSelected: null,
   };
 
-  handleClick = i => {
+  componentDidMount() {
+    this.props.getList();
+  }
+
+  handleClick = (i, item) => {
     this.setState({
       bgColor: 'blue',
       tabSelected: i,
     });
+
+    scroller.scrollTo(item, {
+      duration: 500,
+      delay: 1,
+      smooth: true,
+    });
   };
 
-  componentDidMount() {
-    this.props.getList();
-  }
   render() {
     const { items } = this.props;
     return (
@@ -27,7 +35,7 @@ class Items extends Component {
           return (
             <ItemBox
               key={i}
-              onClick={() => this.handleClick(i)}
+              onClick={() => this.handleClick(i, item)}
               bgColor={'#fff'}
               style={
                 this.state.tabSelected === i
