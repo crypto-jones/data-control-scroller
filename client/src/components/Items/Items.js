@@ -1,26 +1,30 @@
-import React from 'react';
-// import { connect } from 'react-redux';
-// import { getList } from '../../actions';
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import { getList } from '../../actions';
 
-const Items = props => {
-  return (
-    <ul>
-      {props.items.map(item => {
-        return <li key={item}>{item}</li>;
-      })}
-    </ul>
-  );
+class Items extends Component {
+  componentDidMount() {
+    this.props.getList();
+  }
+  render() {
+    const { items } = this.props;
+    return (
+      <Fragment>
+        {items.map(item => {
+          return <ul key={item}>{item}</ul>;
+        })}
+      </Fragment>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    items: state.itemsList,
+  };
 };
 
-// const mapStateToProps = state => {
-//   return {
-//     items: state.itemsList,
-//   };
-// };
-
-// export default connect(
-//   mapStateToProps,
-//   { getList }
-// )(Items);
-
-export default Items;
+export default connect(
+  mapStateToProps,
+  { getList }
+)(Items);
