@@ -7,7 +7,7 @@ import {
 } from '../actions';
 
 const initialState = {
-  itemsLists: [],
+  itemsList: [],
   itemsDesciption: [],
   retrievingLists: false,
   retrievedLists: false,
@@ -22,11 +22,13 @@ export default (state = initialState, action) => {
       return { ...state, retrievingLists: true, retrievedLists: false };
 
     case RETRIEVED_ITEMS_LIST: {
+      console.log('RETRIEVED ITEMS: ', action.payload);
+
       return {
         ...state,
         retrievedLists: true,
         retrievingLists: false,
-        itemsLists: action.payload,
+        itemsList: Object.keys(action.payload),
       };
     }
 

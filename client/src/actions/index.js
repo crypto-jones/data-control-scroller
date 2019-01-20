@@ -6,18 +6,17 @@ export const RETRIEVING_ITEMS_DESCRIPTION = 'RETRIEVING_ITEMS_DESCRIPTION';
 export const RETRIEVED_ITEMS_DESCRIPTION = 'RETRIEVED_ITEMS_DESCRIPTION';
 export const ERROR = 'ERROR';
 
-const listRoute =
-  'https://s3­us­west­2.amazonaws.com/frontend.codex/challenge2/items_list.json';
-
 const descriptionRoute =
   'https://s3­us­west­2.amazonaws.com/frontend.codex/challenge2/items_description.json';
 
 export const getList = () => {
-  const promise = axios.get(listRoute);
+  const promise = axios.get();
   return dispatch => {
     dispatch({ type: RETRIEVING_ITEMS_LIST });
     promise
-      .then(res => dispatch({ type: RETRIEVED_ITEMS_LIST, payload: res.data }))
+      .then(({ res }) =>
+        dispatch({ type: RETRIEVED_ITEMS_LIST, payload: res.payload })
+      )
       .catch(err => dispatch({ type: ERROR, payload: err }));
   };
 };

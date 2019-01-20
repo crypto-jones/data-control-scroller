@@ -1,15 +1,30 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import ItemsContainer from './Items/ItemsContainer';
+import Items from './Items/Items';
+import { getList } from '../actions';
+import { connect } from 'react-redux';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.getList();
+  }
   render() {
+    const { items } = this.props;
     return (
       <div className="App">
-        <ItemsContainer />
+        <Items items={items} />
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    items: state.itemsList,
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { getList }
+)(App);
