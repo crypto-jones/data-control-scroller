@@ -17,7 +17,7 @@ export const ItemsBoxWrapper = styled.div`
 `;
 
 export const ItemBox = styled.div`
-  background-color: green;
+  background: ${props => props.bgColor};
   min-width: 75px;
   margin: 5px;
   height: 75px;
@@ -25,6 +25,7 @@ export const ItemBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 // **** DETAILS ****
@@ -37,9 +38,8 @@ export const DetailsBoxContainer = styled.div`
 
 export const DetailBox = styled.div`
   background-color: gray;
-  margin: 5px;
   min-height: 100px;
-  margin: 5px;
+  margin: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;

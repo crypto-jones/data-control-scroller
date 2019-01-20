@@ -13,7 +13,7 @@ class Details extends Component {
       <Fragment>
         {details.map(detail => {
           return (
-            <DetailBox>
+            <DetailBox key={detail.key}>
               {detail.key} {detail.timelabel} {detail.startTime}{' '}
               {detail.endTime} {detail.destination} {detail.runInstanceLabel}{' '}
               {detail.status} {detail.dataStats.dataSize}{' '}
