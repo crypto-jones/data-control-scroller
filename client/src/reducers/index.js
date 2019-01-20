@@ -16,19 +16,17 @@ const initialState = {
   error: null,
 };
 
-export default (state = initialState, action) => {
+export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case RETRIEVING_ITEMS_LIST:
       return { ...state, retrievingLists: true, retrievedLists: false };
 
     case RETRIEVED_ITEMS_LIST: {
-      console.log('RETRIEVED ITEMS: ', action.payload);
-
       return {
         ...state,
         retrievedLists: true,
         retrievingLists: false,
-        itemsList: Object.keys(action.payload),
+        itemsList: action.payload,
       };
     }
 
