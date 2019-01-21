@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { BeatLoader } from 'react-spinners';
 import { getList } from '../../actions';
-import { ItemBox } from '../../styles/components';
+import { ItemBox, LoadingContainer } from '../../styles/components';
 
 class Items extends Component {
   componentDidMount() {
@@ -20,6 +21,14 @@ class Items extends Component {
 
   render() {
     const { items } = this.props;
+
+    if (this.props.fetching || (!this.props.fetched && !this.props.error)) {
+      return (
+        <LoadingContainer>
+          <BeatLoader color="white" />
+        </LoadingContainer>
+      );
+    }
     return (
       <Fragment>
         {items.map((item, i) => {
@@ -46,6 +55,9 @@ class Items extends Component {
 const mapStateToProps = state => {
   return {
     items: state.itemsList,
+    fetching: state.retrievingLists,
+    fetched: state.retrievedLists,
+    error: state.error,
   };
 };
 

@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { BeatLoader } from 'react-spinners';
 import { getDescription } from '../../actions';
 import {
   DetailBox,
   DetailLabel,
   LabelWrapper,
   Content,
+  LoadingContainer,
 } from '../../styles/components';
 
 class Details extends Component {
@@ -20,6 +22,15 @@ class Details extends Component {
 
   render() {
     const { details } = this.props;
+
+    if (this.props.fetching || (!this.props.fetched && !this.props.error)) {
+      return (
+        <LoadingContainer>
+          <BeatLoader color="white" />
+        </LoadingContainer>
+      );
+    }
+
     return (
       <Fragment>
         {details.map(detail => {
@@ -81,6 +92,9 @@ class Details extends Component {
 const mapStateToProps = state => {
   return {
     details: state.itemsDescription,
+    fetching: state.retrievingDesc,
+    fetched: state.retrievedDesc,
+    error: state.error,
   };
 };
 

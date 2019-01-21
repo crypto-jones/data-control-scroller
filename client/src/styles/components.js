@@ -90,3 +90,12 @@ export const Content = styled.p`
     font-size: 0.9rem;
   }
 `;
+
+// **** LOADING ANIMATION ****
+export const LoadingContainer = styled.div`
+  height: 100%
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
