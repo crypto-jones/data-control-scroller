@@ -4,20 +4,20 @@ A take-home frontend coding challenge for a company I will keep anonymous for th
 ## Checklist
 
 ### Core Features
-- [ ] Use React and Redux
-- [ ] Utilize provided JSON files
-- [ ] List of items can be horizontally scrollable
-- [ ] Details of the items can be vertically scrollable
-- [ ] Selected item’s background should change and its description should appear on the top of the `items description container` as shown in the image.
+- [X] Use React and Redux
+- [X] Utilize provided JSON files
+- [X] List of items can be horizontally scrollable
+- [X] Details of the items can be vertically scrollable
+- [X] Selected item’s background should change and its description should appear on the top of the `items description container` as shown in the image.
 
 ### Bonus Features
-- [ ] Make it pretty
-- [ ] Smooth scrolling effect
-- [ ] Loading animations
+- [X] Make it pretty
+- [X] Smooth scrolling effect
+- [X] Loading animations
 
 ### Submission Instructions
-- [ ] Used only standard libraries (apart from loading animation which are unrelated to core features)
-- [ ] Your code should be clear and well documented
+- [X] Used only standard libraries (apart from loading animation which are unrelated to core features)
+- [X] Your code should be clear and well documented
 
 ## Rationale
 - Styled Components
