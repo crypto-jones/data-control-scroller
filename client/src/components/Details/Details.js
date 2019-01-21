@@ -9,7 +9,7 @@ class Details extends Component {
   }
 
   handleClick = item => {
-    const color = 'blue';
+    const color = '#FFE793';
     this.props.changeSelectedTabs(color, item);
   };
 

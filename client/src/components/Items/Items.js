@@ -9,7 +9,7 @@ class Items extends Component {
   }
 
   handleClick = item => {
-    const color = 'blue';
+    const color = '#FFE793';
     this.props.changeSelectedTabs(color, item);
 
     // Scrolls to detail on item click
@@ -27,7 +27,7 @@ class Items extends Component {
             <ItemBox
               key={i}
               onClick={() => this.handleClick(item)}
-              defaultBgColor={'#fff'}
+              defaultBgColor={'#E2EFFF'}
               style={
                 this.props.tabSelected === item
                   ? { background: this.props.bgColor }

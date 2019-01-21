@@ -9,7 +9,7 @@ export const ItemsBoxContainer = styled.div`
 
 export const ItemsBoxWrapper = styled.div`
   min-height: 150px;
-  background-color: gray;
+  background-color: #33547b;
   overflow-x: auto;
   display: flex;
   align-items: center;
@@ -41,14 +41,14 @@ export const DetailsBoxContainer = styled.div`
 export const DetailsBoxWrapper = styled.div`
   height: 500px;
   overflow-y: auto;
-  background: gray;
+  background: #33547b;
   border-radius: 10px;
   border: 3px solid black;
   scroll-behavior: smooth;
 `;
 
 export const DetailBox = styled.div`
-  background-color: #fff;
+  background-color: #e2efff;
   min-height: 100px;
   margin: 30px 20px;
   display: flex;
