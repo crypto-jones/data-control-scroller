@@ -29,7 +29,7 @@ A take-home frontend coding challenge for a company I will keep anonymous for th
   - Passing properties to the component allows for more flexibility
 
 - Backend Server
-  - The assignment did not instruct to create a backend, but in order to simimulate a more accurate flow of data for this assignment, I spun up a simple node.js server to serve the JSON files
+  - The assignment did not instruct to create a backend, but in order to simimulate a more accurate flow of data for this assignment, I spun up a simple Express server to serve the JSON files
 
 ## To Run Locally
 
