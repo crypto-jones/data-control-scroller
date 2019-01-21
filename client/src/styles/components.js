@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const ItemsBoxContainer = styled.div`
   margin: 0 auto;
   max-width: 800px;
-  padding: 20px;
+  padding: 50px 20px 20px 20px;
 `;
 
 export const ItemsBoxWrapper = styled.div`
@@ -44,6 +44,7 @@ export const DetailsBoxWrapper = styled.div`
   background: gray;
   border-radius: 10px;
   border: 3px solid black;
+  scroll-behavior: smooth;
 `;
 
 export const DetailBox = styled.div`
