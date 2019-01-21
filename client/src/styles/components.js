@@ -49,13 +49,44 @@ export const DetailsBoxWrapper = styled.div`
 
 export const DetailBox = styled.div`
   background-color: #e2efff;
-  min-height: 100px;
+  min-height: 130px;
   margin: 30px 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
   border-radius: 10px;
   border: 2px solid black;
   cursor: pointer;
+`;
+
+export const LabelWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 5px 15px;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 2px;
+
+  @media (max-width: 800px) {
+    margin: 3px 3px;
+    padding: 5px;
+  }
+`;
+
+export const DetailLabel = styled.div`
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding-bottom: 3px;
+
+  @media (max-width: 800px) {
+    font-size: 1rem;
+  }
+`;
+
+export const Content = styled.p`
+  @media (max-width: 800px) {
+    font-size: 0.9rem;
+  }
 `;
