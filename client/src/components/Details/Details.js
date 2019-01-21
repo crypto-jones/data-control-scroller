@@ -33,6 +33,7 @@ class Details extends Component {
 const mapStateToProps = state => {
   return {
     details: state.itemsDescription,
+    scroll: state.scrollTo,
   };
 };
 

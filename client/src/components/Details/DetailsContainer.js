@@ -1,11 +1,16 @@
 import React from 'react';
 import Details from './Details';
-import { DetailsBoxContainer } from '../../styles/components';
+import {
+  DetailsBoxContainer,
+  DetailsBoxWrapper,
+} from '../../styles/components';
 
 const DetailsContainer = () => {
   return (
     <DetailsBoxContainer>
-      <Details />
+      <DetailsBoxWrapper>
+        <Details />
+      </DetailsBoxWrapper>
     </DetailsBoxContainer>
   );
 };

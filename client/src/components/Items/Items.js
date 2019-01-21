@@ -1,14 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { scroller } from 'react-scroll';
 import { getList } from '../../actions';
 import { ItemBox } from '../../styles/components';
+import { scroller } from 'react-scroll';
 
 class Items extends Component {
-  state = {
-    bgColor: '',
-    tabSelected: null,
-  };
+  constructor(handleTabChange) {
+    super(handleTabChange);
+    this.state = {
+      bgColor: '',
+      tabSelected: null,
+    };
+  }
 
   componentDidMount() {
     this.props.getList();
@@ -21,8 +24,8 @@ class Items extends Component {
     });
 
     scroller.scrollTo(item, {
-      duration: 500,
-      delay: 1,
+      duration: 1500,
+      delay: 100,
       smooth: true,
     });
   };
