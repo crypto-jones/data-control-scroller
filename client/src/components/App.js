@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import '../styles/App.css';
+import React, { Component, Fragment } from 'react';
 import ItemsContainer from './Items/ItemsContainer';
 import DetailsContainer from './Details/DetailsContainer';
 
@@ -16,7 +15,7 @@ class App extends Component {
   render() {
     const { bgColor, tabSelected } = this.state;
     return (
-      <div className="App">
+      <Fragment>
         <ItemsContainer
           bgColor={bgColor}
           tabSelected={tabSelected}
@@ -27,7 +26,7 @@ class App extends Component {
           tabSelected={tabSelected}
           changeSelectedTabs={this.changeSelectedTabs}
         />
-      </div>
+      </Fragment>
     );
   }
 }

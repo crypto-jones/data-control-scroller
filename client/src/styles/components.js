@@ -54,6 +54,7 @@ export const DetailBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   border-radius: 10px;
   border: 2px solid black;
   cursor: pointer;

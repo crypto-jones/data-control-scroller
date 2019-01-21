@@ -16,9 +16,6 @@ class Items extends Component {
     const topPos = document.getElementsByClassName(item)[0].offsetTop;
     document.getElementsByClassName('details-container')[0].scrollTop =
       topPos - 270;
-
-    console.log(topPos);
-    console.log(item);
   };
 
   render() {
