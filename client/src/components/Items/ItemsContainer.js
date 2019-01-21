@@ -3,11 +3,15 @@ import './Items';
 import Items from './Items';
 import { ItemsBoxContainer, ItemsBoxWrapper } from '../../styles/components';
 
-const ItemsContainer = () => {
+const ItemsContainer = props => {
   return (
     <ItemsBoxContainer>
-      <ItemsBoxWrapper>
-        <Items />
+      <ItemsBoxWrapper className="items">
+        <Items
+          bgColor={props.bgColor}
+          tabSelected={props.tabSelected}
+          changeSelectedTabs={props.changeSelectedTabs}
+        />
       </ItemsBoxWrapper>
     </ItemsBoxContainer>
   );

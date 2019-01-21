@@ -2,32 +2,23 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getList } from '../../actions';
 import { ItemBox } from '../../styles/components';
-import { scroller } from 'react-scroll';
 
 class Items extends Component {
-  constructor(handleTabChange) {
-    super(handleTabChange);
-    this.state = {
-      bgColor: '',
-      tabSelected: null,
-    };
-  }
-
   componentDidMount() {
     this.props.getList();
   }
 
-  handleClick = (i, item) => {
-    this.setState({
-      bgColor: 'blue',
-      tabSelected: i,
-    });
+  handleClick = item => {
+    const color = 'blue';
+    this.props.changeSelectedTabs(color, item);
 
-    scroller.scrollTo(item, {
-      duration: 1500,
-      delay: 100,
-      smooth: true,
-    });
+    // Scrolls to detail on item click
+    const topPos = document.getElementsByClassName(item)[0].offsetTop;
+    document.getElementsByClassName('details-container')[0].scrollTop =
+      topPos - 240;
+
+    console.log(topPos);
+    console.log(item);
   };
 
   render() {
@@ -38,12 +29,12 @@ class Items extends Component {
           return (
             <ItemBox
               key={i}
-              onClick={() => this.handleClick(i, item)}
-              bgColor={'#fff'}
+              onClick={() => this.handleClick(item)}
+              defaultBgColor={'#fff'}
               style={
-                this.state.tabSelected === i
-                  ? { background: this.state.bgColor }
-                  : { background: this.props.bgColor }
+                this.props.tabSelected === item
+                  ? { background: this.props.bgColor }
+                  : { background: this.props.defaultBgcolor }
               }
             >
               {item}

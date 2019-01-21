@@ -5,11 +5,15 @@ import {
   DetailsBoxWrapper,
 } from '../../styles/components';
 
-const DetailsContainer = () => {
+const DetailsContainer = props => {
   return (
     <DetailsBoxContainer>
-      <DetailsBoxWrapper>
-        <Details />
+      <DetailsBoxWrapper className="details-container">
+        <Details
+          bgColor={props.bgColor}
+          tabSelected={props.tabSelected}
+          changeSelectedTabs={props.changeSelectedTabs}
+        />
       </DetailsBoxWrapper>
     </DetailsBoxContainer>
   );

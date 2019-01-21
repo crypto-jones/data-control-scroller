@@ -2,12 +2,16 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getDescription } from '../../actions';
 import { DetailBox } from '../../styles/components';
-import { Element } from 'react-scroll';
 
 class Details extends Component {
   componentDidMount() {
     this.props.getDescription();
   }
+
+  handleClick = item => {
+    const color = 'blue';
+    this.props.changeSelectedTabs(color, item);
+  };
 
   render() {
     const { details } = this.props;
@@ -15,14 +19,21 @@ class Details extends Component {
       <Fragment>
         {details.map(detail => {
           return (
-            <Element name={detail.key}>
-              <DetailBox key={detail.key}>
-                {detail.key} {detail.timelabel} {detail.startTime}{' '}
-                {detail.endTime} {detail.destination} {detail.runInstanceLabel}{' '}
-                {detail.status} {detail.dataStats.dataSize}{' '}
-                {detail.dataStats.numRows}
-              </DetailBox>
-            </Element>
+            <DetailBox
+              key={detail.key}
+              className={detail.key}
+              onClick={() => this.handleClick(detail.key)}
+              style={
+                this.props.tabSelected === detail.key
+                  ? { background: this.props.bgColor }
+                  : { background: this.props.defaultBgcolor }
+              }
+            >
+              {detail.key} {detail.timelabel} {detail.startTime}{' '}
+              {detail.endTime} {detail.destination} {detail.runInstanceLabel}{' '}
+              {detail.status} {detail.dataStats.dataSize}{' '}
+              {detail.dataStats.numRows}
+            </DetailBox>
           );
         })}
       </Fragment>
@@ -33,7 +44,6 @@ class Details extends Component {
 const mapStateToProps = state => {
   return {
     details: state.itemsDescription,
-    scroll: state.scrollTo,
   };
 };
 

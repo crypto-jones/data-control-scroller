@@ -18,7 +18,7 @@ export const ItemsBoxWrapper = styled.div`
 `;
 
 export const ItemBox = styled.div`
-  background: ${props => props.bgColor};
+  background: ${props => props.defaultBgColor};
   min-width: 75px;
   margin: 5px;
   height: 75px;
@@ -55,4 +55,5 @@ export const DetailBox = styled.div`
   align-items: center;
   border-radius: 10px;
   border: 2px solid black;
+  cursor: pointer;
 `;
